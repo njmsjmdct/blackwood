@@ -1,0 +1,792 @@
+@charset "utf-8";
+@keyframes scrollmove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+}
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+#wrap {
+    width: 100%;
+    background-image: url(../images/back.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+#header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+#aside {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: -90px;
+    width: 120px;
+    height: 100vh;
+}
+#section {
+    width: 100%;
+    height: 100vh;
+}
+#section1 {
+    background-color: #333;
+    height: 100vh;
+}
+#section2 {
+    height: 100vh;
+    overflow: hidden;
+}
+#section3 {
+    height: 100vh;
+}
+#section4 {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+#footer {
+    background-color: #060027;
+    height: 28vh;
+}
+
+#header:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* header */
+
+#header h1 {
+    padding-top: 1%;
+    padding-left: 1%;
+    float: left;
+}
+
+#header ul {
+    float: right;
+}
+#header ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#header ul li {
+    float: left;
+    font-size: 1rem;
+    padding: 0.5em 1em;
+}
+#header ul li a {
+    color: #fff;
+}
+
+
+
+/* aside */
+
+#aside .menubtn {
+    display: table;
+    text-align: center;
+    width: 100px;
+    height: 100vh;
+}
+
+#aside .menubtn ul.triger {
+    display:table-cell;
+    vertical-align: middle;
+}
+#aside .menubtn ul.triger li {
+    height: 2rem;
+    margin-right: 1rem;
+}
+#aside .menubtn ul.triger li a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateY(44px);
+    box-shadow: 0px 1px 3px 0px;
+}
+
+#aside .menubtn ul.btn {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.5);
+}
+#aside .menubtn ul.btn li {
+    font-size: 0.8rem;
+    position: relative;
+}
+#aside .menubtn ul.btn li a {
+    display: block;
+    width: 100px;
+    height: 5rem;
+    padding-top: 2rem;
+}
+#aside .menubtn ul.btn li a:before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+#aside .menubtn ul.btn li.mn a:before{
+    background-image: url(../images/mi_icon.png);
+    background-position: top;
+}
+
+#aside .menubtn ul.btn li.bl a:before {
+    background-image: url(../images/blwd_icon.png);
+    background-position: top;
+}
+#aside .menubtn ul.btn li.pd a:before {
+    background-image: url(../images/pd_icon.png);
+    background-position: top;
+}
+#aside .menubtn ul.btn li.sh a:before {
+    background-image: url(../images/shop_icon.png);
+    background-position: top;
+}
+#aside .menubtn ul.btn li.active a:before {
+    background-position: bottom;
+}
+#aside .menubtn ul.btn li a span {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* mobile nav */
+.mbtriger {
+    display: none;
+}
+.mbtriger a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    z-index: 1000;
+    bottom: 1%;
+    right: 1%;
+    background-color: orange;
+    box-shadow: 0px 1px 3px 0px;
+    border-radius: 10px 10px;
+}
+.mbtriger a span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translateY(20px);
+}
+.mbtriger a span:first-child {
+    margin-left: 5px;
+}
+
+
+
+/* section1 */
+.frame {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.frame ul li {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.frame ul li .mainimg {
+    width: 50%;
+    height: 100vh;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+    padding-left: 10%;
+    padding-top: 10%;
+}
+.frame ul li .mainimg img {
+    transform: translateX(100px);
+    transition: all 0.4s;
+    opacity: 0;
+}
+.frame ul li .mainimg.active img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.frame ul li {
+    display: none;
+/*    background-color: #fbfbfb;*/
+}
+
+.frame ul li.main1 {
+    background-image: url(../images/bg1-1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.frame ul li.main2 {
+    background-image: url(../images/bg1-2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.frame ul li.main3 {
+    background-image: url(../images/bg1-3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.frame ul li.main4 {
+    background-image: url(../images/bg1-4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/*
+.frame ul li .maintext:before {
+    content: "";
+    display: block;
+    border-top: 2px solid #fff;
+    width: 100%;
+    position: absolute;
+    bottom: -100px;
+    left: -390px;
+    transform: rotate(-45deg);
+}
+*/
+.frame ul li .maintext {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 23%;
+    left: 17%;
+    z-index: 99;
+    padding-top: 100px;
+}
+/*
+.frame ul li .maintext:after {
+    content: "";
+    display: block;
+    border-top: 2px solid #fff;
+    width: 100%;
+    position: absolute;
+    top: -150px;
+    left: 350px;
+    transform: rotate(-45deg);
+}
+*/
+
+.frame ul li h3 {
+    font-size: 5rem;
+    font-weight: 800;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: inline-block;
+    color: #1c1c23;
+}
+.frame ul li p {
+    font-size: 1.4rem;
+    color: #fff;
+    text-shadow: 0px 0px 3px #333;
+    display: block;
+    width: 100%;
+}
+
+
+
+.prenex {
+    position: relative;
+    top: -580px;
+    left: 50px;
+}
+.prenex div a{
+    text-align: center;    
+}
+.prenex div a span {
+    margin-top: 30px;
+    margin-left:50px;
+    display: block;
+    width: 4px;
+    height: 45px;
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 999;
+/*    margin: 0 auto;*/
+}
+.prenex .pre a span.bar1 {
+    transform: rotate(0deg);
+    transition: all 0.5s;
+}
+.prenex .pre a span.bar2 {
+    top: 30px;
+    transform: rotate(0deg);
+    transition: all 0.5s;
+}
+.prenex .next a span.bar1 {
+    transform: rotate(0deg);
+    transition: all 0.5s;
+}
+.prenex .next a span.bar2 {
+    top: 30px;
+    transform: rotate(0deg);
+    transition: all 0.5s;
+}
+.prenex .pre {
+    position: absolute;
+    left: 150px;
+}
+.prenex .next {
+    position: absolute;
+    top: -5px;
+    left: 750px;
+}
+.prenex .pre a {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+.prenex .next a {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.scrollclick {
+    width: 40px;
+    height: 60px;
+    border: 2px solid #fff;
+    border-radius: 20px 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    z-index: 100;
+    cursor: pointer;
+}
+.scrollclick a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation-name: scrollmove;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+
+/* section2 */
+.section2top {
+    width: 100%;
+    height: 60vh;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.section2top:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.section2bottom {
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section2top .wave {
+    width: 110%;
+    border-radius: 45%;
+    background: linear-gradient(to right, #fceabb, #f8b500);
+    position: absolute;
+    top: -300%;
+    left: 0;
+    animation: wave 7s infinite;
+}
+.section2top .wave:after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.section2top .number {
+    width: 50%;
+    height: 60vh;
+    padding-left: 10%;
+    padding-top: 5%;
+    position: relative;
+    z-index: 9;
+    text-align: center;
+    float: left;
+    transform: translateX(-150px);
+    transition: all 0.5s;
+    opacity: 0;
+}
+.section2top .number.active {
+    transform: translateX(0px);
+    opacity: 1;
+}
+.section2top .number p {
+    font-size: 3rem;
+    color: #333;
+}
+.section2top .number h2 {
+    font-size: 15rem;
+    color: #333;
+}
+
+.section2top .section2text {
+    width: 50%;
+    padding-top: 5%;
+    position: relative;
+    z-index: 9;
+    float: right;
+    transform: translateX(150px);
+    transition: all 0.5s;
+    opacity: 0;
+}
+.section2top .section2text.active {
+    transition-delay: 0.5s;
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.section2top .section2text h3 {
+    font-size: 2rem;
+    padding: 3%;
+    padding-left: 0;
+    color: #fff;
+}
+.section2top .section2text p {
+    display: block;
+    width: 50%;
+    font-size: 1rem;
+}
+.section2top .section2text p span {
+    font-size: 1.5rem;
+}
+
+.section2bottom:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.section2bottom .dogcat {
+    width: 80%;
+    float: left;
+    background-image: url(../images/dogcat.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    transform: translateY(0px);
+    transition: all 0.5s;
+    opacity: 0;
+}
+.section2bottom .dogcat:after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.section2bottom .dogcat.active {
+    transform: translateY(-150px);
+    transition-delay: 0.7s;
+    opacity: 1;
+}
+.section2text .section2icon {
+    padding-top: 2rem;
+}
+.section2text .section2icon img {
+    padding-right: 1rem;
+}
+/* section3 */
+.section3top {
+    width: 100%;
+    height: 70vh;
+    background-color: #fff;
+}
+.section3bottom {
+    width: 100%;
+    height: 30vh;
+    text-align: center;
+    display: table;
+}
+
+.section3top .product {
+    width: 90%;
+    height: 70vh;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.section3top .product > div {   
+    text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+}
+.section3top .product ul {
+    padding-top: 180px;
+    padding-left: 240px;
+}
+.section3top .product ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.section3top .product ul li {
+    float: left;
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    text-align: center;   
+}
+.section3top .product ul li.on a {
+    background: linear-gradient(to right, #f2994a, #f2c94c);
+    border-radius: 5px 5px; 
+    color: #fff;
+}
+.section3top .product ul li a {
+    display: block;
+    width: 70px;
+    height: 40px;
+    font-size: 0.8rem;
+}
+.section3top .product > div:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.section3top .product > div > div {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24%;
+    height: auto;
+    border: 1px solid #d9d9d9;
+    margin: 0 5px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+.section3top .product > div > div > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section3top .product > div > div .proinfo {
+    width: 300px;
+    height: 120px;
+    padding: 10px;
+    background: linear-gradient(to right, #f2994a, #f2c94c);
+    position: absolute;
+    bottom: -120px;
+    cursor: pointer;
+}
+.section3top .product > div > div .proinfo h3 {
+    font-size: 1.3rem;
+    color: #fff;
+}
+.section3top .product > div > div .proinfo p {
+    font-size: 0.9rem;
+    padding-top: 1rem;
+}
+.section3top .product > div > div .proinfo p span {
+    font-size: 1.2rem;
+    display: block;
+    padding-top: 1rem;
+}
+
+
+.section3bottom .s3con {
+    display: table-cell;
+    vertical-align: middle;
+}
+.section3bottom .s3con h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+.section3bottom .s3con a {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 2px solid #333;
+}
+
+/* section4 */
+.section4wrap {
+    width: 70%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.section4wrap ul {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+}
+.section4wrap ul li {
+    width: 40rem;
+    padding: 3rem;
+    transform: translateY(100px);
+    background-color: #fff;
+    transition: all 0.5s;
+    opacity: 0;
+    position: relative;
+}
+.section4wrap ul li.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.section4wrap ul li:nth-child(even) {
+    margin-left: 40rem;
+}
+.section4wrap ul li h3 {
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 0.5em;
+    padding-left: 0;
+    border-top: 3px solid orange;
+}
+.section4wrap ul li p {
+    font-size: 18px;
+}
+.section4wrap ul li p a {
+    display: block;
+    padding: 1rem;
+    padding-left: 0;
+    font-size: 1.5rem;
+}
+.section4wrap ul li img {
+    position: absolute;
+    z-index: -9;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: all 0.5s;
+    opacity: 0;
+}
+.section4wrap ul li:nth-child(odd).active img {
+    transform: translateX(638px);
+    opacity: 1;
+}
+.section4wrap ul li:nth-child(even).active img {
+    transform: translateX(-638px);
+    opacity: 1;
+}
+
+/*footer*/
+.footerwrap {
+    width: 70%;
+    margin: 0 auto;
+    color: #f1f1f1;
+}
+.footerwrap:after {
+    content:"";
+    display: block;
+    clear: both;
+}
+.footerwrap ul {
+    padding: 3%;
+}
+.footerwrap ul:after {
+    content:"";
+    display: block;
+    clear: both;
+}
+.footerwrap ul li {
+    float: left;
+    padding: 0 1rem;
+}
+.footerwrap ul li a {
+    color: #fff;
+    text-align: center;
+}
+.footerwrap img {
+    float: left;
+    padding-left: 3%;
+}
+.footerwrap p {
+    display: inline-block;
+    padding: 3%;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.5rem;
+}
+.footerwrap p span {
+    font-weight: 700;
+    color: #fff;
+}
+
+/* media query */
+
+@media (max-width: 1200px){
+
+}
+@media screen and (max-width: 600px){
+    #aside {
+        display: none;
+    }
+    .mbtriger {
+        display: block;
+    }
+    .frame ul li h3 {
+        font-size: 2rem;
+    }
+    .frame ul li .mainimg img {
+        width: 200px;
+        padding-top: 150px;
+    }
+    .section2top .number {
+        padding-top: 120px;
+    }
+    .section2top .number h2 {
+        font-size: 6rem;
+    }
+    .section2top .number p {
+        font-size: 2rem;
+    }
+    .section2top .wave {
+        top: -250px;
+    }
+    .section4wrap ul li img {
+        display: none;
+    }
+    .section4wrap ul {
+        padding-top: 0;
+    }
+    .section4wrap ul li {
+        width 100px;
+    }
+    .section4wrap ul li:nth-child(even) {
+    margin-left: 0;
+}
+}
